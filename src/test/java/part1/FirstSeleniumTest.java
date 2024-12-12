@@ -46,7 +46,6 @@ public class FirstSeleniumTest
 
       //clicking the login button
       driver.findElement(By.tagName("button")).click();
-      Thread.sleep(1000);
       String actualResult = driver.findElement(By.tagName("h6")).getText();
       String expectedResults = "Dashboard";
       Assert.assertEquals(actualResult, expectedResults);
