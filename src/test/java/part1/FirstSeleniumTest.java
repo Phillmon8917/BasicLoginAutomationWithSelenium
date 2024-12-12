@@ -27,14 +27,14 @@ public class FirstSeleniumTest
     @AfterClass
     public void tearDown()
     {
-        driver.quit(); //Mostly use this to close every window
+        //driver.quit(); //Mostly use this to close every window
         //alternatively close only closes the current window
     }
 
     @Test
     public void testLoggingIntoApplication() throws InterruptedException
     {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         //populating the username
       WebElement username =  driver.findElement(By.name("username"));
@@ -46,7 +46,7 @@ public class FirstSeleniumTest
 
       //clicking the login button
       driver.findElement(By.tagName("button")).click();
-
+      Thread.sleep(1000);
       String actualResult = driver.findElement(By.tagName("h6")).getText();
       String expectedResults = "Dashboard";
       Assert.assertEquals(actualResult, expectedResults);
